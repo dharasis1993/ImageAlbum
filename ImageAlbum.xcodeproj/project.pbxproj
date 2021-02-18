@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -17,6 +17,10 @@
 		536C030625DEC62A009D4D38 /* ImageAlbumUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536C030525DEC62A009D4D38 /* ImageAlbumUITests.swift */; };
 		536C032025DEC99C009D4D38 /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536C031F25DEC99C009D4D38 /* APIRouter.swift */; };
 		536C032825DEC9AD009D4D38 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536C032725DEC9AD009D4D38 /* APIClient.swift */; };
+		536C033B25DECD3B009D4D38 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536C033A25DECD3B009D4D38 /* Constants.swift */; };
+		536C034125DEDC26009D4D38 /* AlbumCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536C034025DEDC26009D4D38 /* AlbumCell.swift */; };
+		536C034625DEF305009D4D38 /* AlbumViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536C034525DEF305009D4D38 /* AlbumViewModel.swift */; };
+		536C034B25DEF3A4009D4D38 /* AlbumModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536C034A25DEF3A4009D4D38 /* AlbumModel.swift */; };
 		73E8354A67062EE8B9A51576 /* Pods_ImageAlbum.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15CBE5FB2836D42DD37825CE /* Pods_ImageAlbum.framework */; };
 		93942249BEEFDF3C5AF3D5E9 /* Pods_ImageAlbumTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9BAB5A666CD0B308E6BE9D2 /* Pods_ImageAlbumTests.framework */; };
 		D591B2E2363E2207D854DED6 /* Pods_ImageAlbum_ImageAlbumUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12059ABC224F3F9937EF1035 /* Pods_ImageAlbum_ImageAlbumUITests.framework */; };
@@ -58,6 +62,10 @@
 		536C030725DEC62A009D4D38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		536C031F25DEC99C009D4D38 /* APIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
 		536C032725DEC9AD009D4D38 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		536C033A25DECD3B009D4D38 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		536C034025DEDC26009D4D38 /* AlbumCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCell.swift; sourceTree = "<group>"; };
+		536C034525DEF305009D4D38 /* AlbumViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumViewModel.swift; sourceTree = "<group>"; };
+		536C034A25DEF3A4009D4D38 /* AlbumModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumModel.swift; sourceTree = "<group>"; };
 		74A8381F90A896AABCB4B621 /* Pods-ImageAlbum.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageAlbum.debug.xcconfig"; path = "Target Support Files/Pods-ImageAlbum/Pods-ImageAlbum.debug.xcconfig"; sourceTree = "<group>"; };
 		8150C1FD7B8E2AA6A778268A /* Pods-ImageAlbum-ImageAlbumUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageAlbum-ImageAlbumUITests.release.xcconfig"; path = "Target Support Files/Pods-ImageAlbum-ImageAlbumUITests/Pods-ImageAlbum-ImageAlbumUITests.release.xcconfig"; sourceTree = "<group>"; };
 		94D203FE6137B0045761390A /* Pods-ImageAlbumTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageAlbumTests.release.xcconfig"; path = "Target Support Files/Pods-ImageAlbumTests/Pods-ImageAlbumTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -120,6 +128,8 @@
 		536C02E225DEC627009D4D38 /* ImageAlbum */ = {
 			isa = PBXGroup;
 			children = (
+				536C033F25DEDBFA009D4D38 /* View */,
+				536C033925DECD27009D4D38 /* Utility */,
 				536C031E25DEC96B009D4D38 /* Network Manager */,
 				536C031D25DEC8E6009D4D38 /* VIew Model */,
 				536C031C25DEC8DF009D4D38 /* Model */,
@@ -171,6 +181,7 @@
 		536C031C25DEC8DF009D4D38 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				536C034A25DEF3A4009D4D38 /* AlbumModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -178,6 +189,7 @@
 		536C031D25DEC8E6009D4D38 /* VIew Model */ = {
 			isa = PBXGroup;
 			children = (
+				536C034525DEF305009D4D38 /* AlbumViewModel.swift */,
 			);
 			path = "VIew Model";
 			sourceTree = "<group>";
@@ -191,6 +203,22 @@
 			path = "Network Manager";
 			sourceTree = "<group>";
 		};
+		536C033925DECD27009D4D38 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				536C033A25DECD3B009D4D38 /* Constants.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		536C033F25DEDBFA009D4D38 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				536C034025DEDC26009D4D38 /* AlbumCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		655A6C5E1A5A03B933BF850C /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -201,7 +229,6 @@
 				CAF6801EC5F16D0EBB3D6191 /* Pods-ImageAlbumTests.debug.xcconfig */,
 				94D203FE6137B0045761390A /* Pods-ImageAlbumTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -474,8 +501,12 @@
 				536C02E825DEC627009D4D38 /* ViewController.swift in Sources */,
 				536C032025DEC99C009D4D38 /* APIRouter.swift in Sources */,
 				536C02E425DEC627009D4D38 /* AppDelegate.swift in Sources */,
+				536C034125DEDC26009D4D38 /* AlbumCell.swift in Sources */,
+				536C034B25DEF3A4009D4D38 /* AlbumModel.swift in Sources */,
+				536C034625DEF305009D4D38 /* AlbumViewModel.swift in Sources */,
 				536C032825DEC9AD009D4D38 /* APIClient.swift in Sources */,
 				536C02E625DEC627009D4D38 /* SceneDelegate.swift in Sources */,
+				536C033B25DECD3B009D4D38 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
