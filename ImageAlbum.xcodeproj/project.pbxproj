@@ -99,9 +99,10 @@
 		536C02E225DEC627009D4D38 /* ImageAlbum */ = {
 			isa = PBXGroup;
 			children = (
-				536C02E325DEC627009D4D38 /* AppDelegate.swift */,
-				536C02E525DEC627009D4D38 /* SceneDelegate.swift */,
-				536C02E725DEC627009D4D38 /* ViewController.swift */,
+				536C031D25DEC8E6009D4D38 /* VIew Model */,
+				536C031C25DEC8DF009D4D38 /* Model */,
+				536C031B25DEC8C1009D4D38 /* Controller */,
+				536C031925DEC849009D4D38 /* App Delegate */,
 				536C02E925DEC627009D4D38 /* Main.storyboard */,
 				536C02EC25DEC62A009D4D38 /* Assets.xcassets */,
 				536C02EE25DEC62A009D4D38 /* LaunchScreen.storyboard */,
@@ -126,6 +127,37 @@
 				536C030725DEC62A009D4D38 /* Info.plist */,
 			);
 			path = ImageAlbumUITests;
+			sourceTree = "<group>";
+		};
+		536C031925DEC849009D4D38 /* App Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				536C02E325DEC627009D4D38 /* AppDelegate.swift */,
+				536C02E525DEC627009D4D38 /* SceneDelegate.swift */,
+			);
+			path = "App Delegate";
+			sourceTree = "<group>";
+		};
+		536C031B25DEC8C1009D4D38 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				536C02E725DEC627009D4D38 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		536C031C25DEC8DF009D4D38 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		536C031D25DEC8E6009D4D38 /* VIew Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "VIew Model";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
