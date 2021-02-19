@@ -9,19 +9,26 @@ import UIKit
 
 class ViewController: UIViewController {
     @IBOutlet weak var albumCollectionView: UICollectionView!
+    private var albumViewModel : AlbumViewModel!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        self.albumViewModel =  AlbumViewModel()
+        self.albumViewModel.bindAlbumViewModelToController = {[weak self = self] in
+            self?.albumCollectionView.reloadData()
+        }
+        
     }
 }
 
 
 extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-           return 10
+        return 0
        }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView,cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell =  collectionView.dequeueReusableCell(withReuseIdentifier: Identifier.albumCellIdentifier, for: indexPath ) as! AlbumCell
         cell.albumTitle.text = "dahf dshfhs  sdhf saf"
         return cell

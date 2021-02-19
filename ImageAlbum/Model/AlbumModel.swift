@@ -6,19 +6,13 @@
 //
 
 import Foundation
-struct Album {
-    var userId: Int
-    var albumId: Int
-    var albumTitle: String
-    init?(userId: Int?, albumId: Int?, albumTitle: String?) {
-        guard let userId = userId,
-              let albumId = albumId,
-              let albumTitle = albumTitle
-            else {
-              return nil
-            }
-            self.userId = userId
-            self.albumId = albumId
-            self.albumTitle = albumTitle
-          }
+struct Album: Decodable {
+    var userId: Int?
+    var albumId: Int?
+    var albumTitle: String?
+    enum CodingKeys: String, CodingKey {
+        case userId = "userId"
+        case albumId = "id"
+        case albumTitle = "title"
     }
+}
