@@ -9,10 +9,17 @@ import UIKit
 
 class AlbumCell: UICollectionViewCell {
     @IBOutlet var albumTitle: UILabel!
-    
+
+
+    var albumCellViewModel: AlbumCellViewModel?{
+        didSet{
+            albumTitle.text = albumCellViewModel?.albumTitle
+        }
+    }
+
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        self.layer.cornerRadius = 10;
+        self.layer.cornerRadius = CGFloat(AlbumCollectionCellSettings.cornerRadius)
         self.layer.masksToBounds = true
     }
 }

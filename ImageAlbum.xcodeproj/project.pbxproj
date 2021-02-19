@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5326E8B725E00F920033F288 /* AlbumCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5326E8B625E00F920033F288 /* AlbumCellViewModel.swift */; };
 		536C02E425DEC627009D4D38 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536C02E325DEC627009D4D38 /* AppDelegate.swift */; };
 		536C02E625DEC627009D4D38 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536C02E525DEC627009D4D38 /* SceneDelegate.swift */; };
 		536C02E825DEC627009D4D38 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536C02E725DEC627009D4D38 /* ViewController.swift */; };
@@ -46,6 +47,7 @@
 /* Begin PBXFileReference section */
 		12059ABC224F3F9937EF1035 /* Pods_ImageAlbum_ImageAlbumUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ImageAlbum_ImageAlbumUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		15CBE5FB2836D42DD37825CE /* Pods_ImageAlbum.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ImageAlbum.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5326E8B625E00F920033F288 /* AlbumCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCellViewModel.swift; sourceTree = "<group>"; };
 		536C02E025DEC627009D4D38 /* ImageAlbum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageAlbum.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		536C02E325DEC627009D4D38 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		536C02E525DEC627009D4D38 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -190,6 +192,7 @@
 			isa = PBXGroup;
 			children = (
 				536C034525DEF305009D4D38 /* AlbumViewModel.swift */,
+				5326E8B625E00F920033F288 /* AlbumCellViewModel.swift */,
 			);
 			path = "VIew Model";
 			sourceTree = "<group>";
@@ -506,6 +509,7 @@
 				536C034625DEF305009D4D38 /* AlbumViewModel.swift in Sources */,
 				536C032825DEC9AD009D4D38 /* APIClient.swift in Sources */,
 				536C02E625DEC627009D4D38 /* SceneDelegate.swift in Sources */,
+				5326E8B725E00F920033F288 /* AlbumCellViewModel.swift in Sources */,
 				536C033B25DECD3B009D4D38 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

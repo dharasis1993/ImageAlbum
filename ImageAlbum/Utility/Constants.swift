@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 struct ProductionServer {
-    static let baseURL = "https://jsonplaceholder.typicode.com/"
+    static let baseURL = "https://jsonplaceholder.typicode.com"
 }
 
 struct Identifier {
@@ -18,14 +18,16 @@ struct Identifier {
 
 struct Insets {
     static let sectionInsets = UIEdgeInsets(
-      top: 20,
-      left: 20,
-      bottom: 50,
-      right: 20)
+      top: 5,
+      left: 10,
+      bottom: 5,
+      right: 10)
 }
 
 struct AlbumCollectionCellSettings {
     static let itemsPerRow = 1
     static let widthOfItemScaleFactor = 0.3
+    static let cornerRadius = 10
+
 }
     

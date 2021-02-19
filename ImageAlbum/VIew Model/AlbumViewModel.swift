@@ -10,8 +10,12 @@ import Foundation
 class AlbumViewModel: NSObject{
     
     private var apiClient : APIClient!
-    private(set) var albumData : [Album]? {
+   
+     var filteredCellViewModel: [AlbumCellViewModel] = [AlbumCellViewModel]()
+   
+    private var albumCellViewModels: [AlbumCellViewModel] = [AlbumCellViewModel]() {
         didSet {
+            filteredCellViewModel = albumCellViewModels
             self.bindAlbumViewModelToController()
         }
     }
@@ -24,18 +28,35 @@ class AlbumViewModel: NSObject{
         callFuncToGetAlbumData()
     }
     
+    var numberOfAlbums: Int {
+        return albumCellViewModels.count
+    }
+    
    private func callFuncToGetAlbumData() {
         self.apiClient.callGetApi(serviceName: APIRouter.album) { (data: Data?, error: NSError?) in
             
             if error != nil {
                 return
             }
-            guard let albumData = data else {
+            guard let data = data else {
                 return
             }
-            
+            var albumList = [Album]()
             let decoder = JSONDecoder()
-            let album = try? decoder.decode([Album].self, from: albumData)
+            do{
+                albumList =  try decoder.decode([Album].self, from: data)
+            }catch{
+                return
+            }
+            var cellViewModel = [AlbumCellViewModel]()
+            for album in albumList {
+                cellViewModel.append(AlbumCellViewModel(album: album))
+            }
+            self.albumCellViewModels = cellViewModel
         }
+    }
+
+    func getCellViewModel() -> [AlbumCellViewModel] {
+        return albumCellViewModels
     }
 }
