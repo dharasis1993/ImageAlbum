@@ -10,9 +10,8 @@ import Alamofire
 
 enum APIRouter : URLRequestConvertible{
     case album
-    case image
+    case image(Int)
     
-
     private var method: HTTPMethod{
         switch self {
         case .album:
@@ -26,8 +25,8 @@ enum APIRouter : URLRequestConvertible{
         switch self {
         case .album:
             return "/albums"
-        case .image:
-            return "/photos"
+        case let .image(albumId):
+            return "/albums/\(albumId)/photos"
         }
     }
     

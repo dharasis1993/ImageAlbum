@@ -9,10 +9,22 @@ import UIKit
 
 
 class GalleryViewController: UICollectionViewController {
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    private var galleryViewModel : GalleryViewModel!
+    var albumId: Int?
 
+    override func viewDidLoad() {
+
+        super.viewDidLoad()
+        if let albumId = albumId{
+            self.galleryViewModel =  GalleryViewModel(with: albumId)
+            self.galleryViewModel.bindGalleryViewModelToController = {[weak self = self] in
+                self?.collectionView.reloadData()
+            }
+        }
+        
+//        if let collectionViewLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+//                   collectionViewLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
+//               }
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -38,14 +50,13 @@ class GalleryViewController: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 10
+        return galleryViewModel.numberOfImages
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Identifier.imageCellIdentifier, for: indexPath) as! GalleryViewCell
      
-        // Configure the cell
-        print("cell")
+        cell.galleryCellViewModel = galleryViewModel.getCellViewModel(at: indexPath)
         return cell
     }
 
@@ -84,13 +95,13 @@ class GalleryViewController: UICollectionViewController {
 }
 extension GalleryViewController: UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize{
-        let paddingSpace = Int(Insets.ImageCellInsets.left) * (ImageCollectionCellSettings.itemsPerRow + 1)
+       let paddingSpace = Int(Insets.ImageCellInsets.left) * (ImageCollectionCellSettings.itemsPerRow + 1)
             let availableWidth = Int(collectionView.frame.width) - paddingSpace
             let widthPerItem = availableWidth / ImageCollectionCellSettings.itemsPerRow
         let heightPerItem = Double(widthPerItem) * ImageCollectionCellSettings.widthOfItemScaleFactor
         return CGSize(width: widthPerItem, height: Int(heightPerItem))
     }
-    
+
       func collectionView(
         _ collectionView: UICollectionView,
         layout collectionViewLayout: UICollectionViewLayout,
@@ -98,7 +109,7 @@ extension GalleryViewController: UICollectionViewDelegateFlowLayout{
       ) -> UIEdgeInsets {
         return Insets.ImageCellInsets
       }
-      
+
       func collectionView(
         _ collectionView: UICollectionView,
         layout collectionViewLayout: UICollectionViewLayout,

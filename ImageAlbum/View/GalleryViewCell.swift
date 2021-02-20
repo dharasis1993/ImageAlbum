@@ -6,17 +6,28 @@
 //
 
 import UIKit
+import AlamofireImage
+import Alamofire
+
 
 class GalleryViewCell: UICollectionViewCell {
     
     @IBOutlet weak var galleryImage: UIImageView!
-   
     @IBOutlet weak var lblImageTitle: UILabel!
-    
     var galleryCellViewModel: GalleryCellViewModel?{
         didSet{
-            galleryImage.image = UIImage(named: "")
-            lblImageTitle.text = galleryCellViewModel?.imageTitle
+
+//                if let imageurl = self.galleryCellViewModel?.image{
+//                    self.galleryImage.af.setImage(withURL: imageurl, completion:  { (response) in
+//
+//                        switch(response.result) {
+//                        case .success(let value):
+//                            print(value.size.width,value.size.width)
+//                        case .failure(let error): break
+//                        }
+//                    })
+//            }
+                lblImageTitle.text = galleryCellViewModel?.imageTitle
         }
     }
     

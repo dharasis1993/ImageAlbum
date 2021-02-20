@@ -12,10 +12,6 @@ class AlbumViewModel: NSObject{
     private var apiClient : APIClient!
    
     var filteredCellViewModel: [AlbumCellViewModel] = [AlbumCellViewModel]()
-    
-    private var galleryImageList: [ImageGallery] = [ImageGallery]()
-  
-   
     private var albumCellViewModels: [AlbumCellViewModel] = [AlbumCellViewModel]() {
         didSet {
             filteredCellViewModel = albumCellViewModels
@@ -57,30 +53,16 @@ class AlbumViewModel: NSObject{
             }
             self.albumCellViewModels = cellViewModel
         }
-
-    self.apiClient.callGetApi(serviceName:  APIRouter.image) { (data: Data?, error: NSError?) in
-        
-        if error != nil {
-            return
-        }
-        guard let data = data else {
-            return
-        }
-        let decoder = JSONDecoder()
-        do{
-            self.galleryImageList =  try decoder.decode([ImageGallery].self, from: data)
-        }catch{
-            return
-        }
-        
-    }
 }
 
     func getCellViewModel() -> [AlbumCellViewModel] {
         return albumCellViewModels
     }
-    
-    func getgalleryImageList() -> [ImageGallery] {
-        return galleryImageList
+}
+
+struct AlbumCellViewModel {
+    let albumTitle: String
+    init(album: Album) {
+        albumTitle = album.albumTitle ?? ""
     }
 }

@@ -11,19 +11,15 @@ class ViewController: UIViewController {
     @IBOutlet weak var albumCollectionView: UICollectionView!
     
     private var albumViewModel : AlbumViewModel!
-    
+    private var selectedAlbum: Int!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
-        
-        
         self.albumViewModel =  AlbumViewModel()
         self.albumViewModel.bindAlbumViewModelToController = {[weak self = self] in
             self?.albumCollectionView.reloadData()
         }
-        
     }
 }
 
@@ -40,13 +36,13 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate{
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if(albumViewModel.getgalleryImageList().count != 0){
-          self.performSegue(withIdentifier: Identifier.segueIdentifier, sender: self)
-        }
+        selectedAlbum = indexPath.row + 1
+        performSegue(withIdentifier: Identifier.segueIdentifier, sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        print(segue.destination)
+        let destinationVC: GalleryViewController = segue.destination as! GalleryViewController
+        destinationVC.albumId = selectedAlbum
     }
 }
 
