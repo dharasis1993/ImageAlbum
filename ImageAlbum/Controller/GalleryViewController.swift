@@ -98,8 +98,8 @@ extension GalleryViewController: UICollectionViewDelegateFlowLayout{
        let paddingSpace = Int(Insets.ImageCellInsets.left) * (ImageCollectionCellSettings.itemsPerRow + 1)
             let availableWidth = Int(collectionView.frame.width) - paddingSpace
             let widthPerItem = availableWidth / ImageCollectionCellSettings.itemsPerRow
-        let heightPerItem = Double(widthPerItem) * ImageCollectionCellSettings.widthOfItemScaleFactor
-        return CGSize(width: widthPerItem, height: Int(heightPerItem))
+//        let heightPerItem = Double(widthPerItem) * ImageCollectionCellSettings.widthOfItemScaleFactor
+        return CGSize(width: widthPerItem, height: 600)
     }
 
       func collectionView(

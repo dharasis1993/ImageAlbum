@@ -17,16 +17,9 @@ class GalleryViewCell: UICollectionViewCell {
     var galleryCellViewModel: GalleryCellViewModel?{
         didSet{
 
-//                if let imageurl = self.galleryCellViewModel?.image{
-//                    self.galleryImage.af.setImage(withURL: imageurl, completion:  { (response) in
-//
-//                        switch(response.result) {
-//                        case .success(let value):
-//                            print(value.size.width,value.size.width)
-//                        case .failure(let error): break
-//                        }
-//                    })
-//            }
+                if let imageurl = self.galleryCellViewModel?.image{
+                    self.galleryImage.af.setImage(withURL: imageurl,placeholderImage: UIImage(named: "placeholder"))
+            }
                 lblImageTitle.text = galleryCellViewModel?.imageTitle
         }
     }
