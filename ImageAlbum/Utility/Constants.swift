@@ -14,14 +14,23 @@ struct ProductionServer {
 
 struct Identifier {
     static let albumCellIdentifier = "albumCell"
+    static let imageCellIdentifier = "imageCell"
+    static let segueIdentifier = "segueToImageVC"
 }
 
 struct Insets {
-    static let sectionInsets = UIEdgeInsets(
+    static let albumCellInsets = UIEdgeInsets(
       top: 5,
       left: 10,
       bottom: 5,
       right: 10)
+    
+    static let ImageCellInsets = UIEdgeInsets(
+      top: 5,
+      left: 10,
+      bottom: 5,
+      right: 10)
+    
 }
 
 struct AlbumCollectionCellSettings {
@@ -30,4 +39,11 @@ struct AlbumCollectionCellSettings {
     static let cornerRadius = 10
 
 }
+struct ImageCollectionCellSettings {
+    static let itemsPerRow = 1
+    static let widthOfItemScaleFactor = 0.8
+    static let cornerRadius = 10
+
+}
+    
     

@@ -13,3 +13,5 @@ struct AlbumCellViewModel {
         albumTitle = album.albumTitle ?? ""
     }
 }
+
+

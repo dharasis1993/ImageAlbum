@@ -40,12 +40,19 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate{
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if(albumViewModel.getgalleryImageList().count != 0){
+          self.performSegue(withIdentifier: Identifier.segueIdentifier, sender: self)
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        print(segue.destination)
     }
 }
 
 extension ViewController: UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize{
-        let paddingSpace = Int(Insets.sectionInsets.left) * (AlbumCollectionCellSettings.itemsPerRow + 1)
+        let paddingSpace = Int(Insets.albumCellInsets.left) * (AlbumCollectionCellSettings.itemsPerRow + 1)
             let availableWidth = Int(collectionView.frame.width) - paddingSpace
             let widthPerItem = availableWidth / AlbumCollectionCellSettings.itemsPerRow
         let heightPerItem = Double(widthPerItem) * AlbumCollectionCellSettings.widthOfItemScaleFactor
@@ -57,7 +64,7 @@ extension ViewController: UICollectionViewDelegateFlowLayout{
         layout collectionViewLayout: UICollectionViewLayout,
         insetForSectionAt section: Int
       ) -> UIEdgeInsets {
-        return Insets.sectionInsets
+        return Insets.albumCellInsets
       }
       
       func collectionView(
@@ -65,7 +72,7 @@ extension ViewController: UICollectionViewDelegateFlowLayout{
         layout collectionViewLayout: UICollectionViewLayout,
         minimumLineSpacingForSectionAt section: Int
       ) -> CGFloat {
-        return Insets.sectionInsets.left
+        return Insets.albumCellInsets.left
       }
 }
 
