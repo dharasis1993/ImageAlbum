@@ -90,10 +90,10 @@
             </objects>
             <point key="canvasLocation" x="1050.7246376811595" y="73.660714285714278"/>
         </scene>
-        <!--Gallery TableV Iew Controlelr-->
+        <!--Gallery TableView Controller-->
         <scene sceneID="9tM-vR-IFL">
             <objects>
-                <tableViewController id="VMC-Sl-Fcv" customClass="GalleryTableVIewControlelr" customModule="ImageAlbum" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="VMC-Sl-Fcv" userLabel="Gallery TableView Controller" customClass="GalleryTableVIewController" customModule="ImageAlbum" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Xn5-iN-UQn">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
