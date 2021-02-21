@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class ViewController: UIViewController {
     @IBOutlet weak var albumCollectionView: UICollectionView!
@@ -15,10 +16,15 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        SVProgressHUD.setDefaultMaskType(.custom)
+        SVProgressHUD.setBackgroundLayerColor(.darkGray)
         // Do any additional setup after loading the view.
         self.albumViewModel =  AlbumViewModel()
+        SVProgressHUD.show()
         self.albumViewModel.bindAlbumViewModelToController = {[weak self = self] in
             self?.albumCollectionView.reloadData()
+            SVProgressHUD.dismiss()
+
         }
     }
 }
@@ -41,7 +47,7 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate{
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destinationVC: GalleryViewController = segue.destination as! GalleryViewController
+        let destinationVC: GalleryTableVIewController = segue.destination as! GalleryTableVIewController
         destinationVC.albumId = selectedAlbum
     }
 }

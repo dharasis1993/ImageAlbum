@@ -63,7 +63,7 @@ class GalleryViewModel: NSObject{
 struct GalleryCellViewModel {
     let imageTitle: String?
     let image: URL?
-    init(gallery: ImageGallery) {
+    init(gallery: ImageGallery) {   
         imageTitle = gallery.imageTitle
         image = URL(string: gallery.imageUrl ?? "")
     }
