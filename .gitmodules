@@ -1,0 +1,3 @@
+[submodule "Album"]
+	path = Album
+	url = https://github.com/dharasis1993/Album.git
